@@ -33,7 +33,7 @@ def image():
     except:
         return jsonify({ 'error': 'Invalid syntax for this request was provided.' }), 400
 
-@app.route('/image_delete', methods=['DELETE'])
+@app.route('/removefile', methods=['POST'])
 def remove_image(): 
     try:
         data = request.get_json()
