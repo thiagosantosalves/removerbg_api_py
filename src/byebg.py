@@ -69,6 +69,10 @@ nameFile = 'teste.png'
     
 original_img = Image.open('8k.jpg')
 no_bg_img = remove(original_img)
+
+print(no_bg_img)
+
+print('passou da parte do erro')
 no_bg_img.save(nameFile)
 
 print('deu certo')
