@@ -27,10 +27,16 @@ def image():
         print(no_bg_img)
 
 
-        no_bg_img.save(output_path)
+        """         no_bg_img.save(output_path) """
+
+        no_bg_img.save('output_image.jpg')
+
+        """ res = {
+            'url': 'http://24.199.99.39:5000/files/'+nameFile
+        } """
 
         res = {
-            'url': 'http://24.199.99.39:5000/files/'+nameFile
+            'url': 'http://24.199.99.39:5000/files/teste.png'
         }
 
         return jsonify(res), 200 
