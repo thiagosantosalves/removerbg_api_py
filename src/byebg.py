@@ -35,17 +35,21 @@ def image():
 
 @app.route('/image_delete', methods=['DELETE'])
 def remove_image(): 
+    try:
+        data = request.get_json()
+        path = data.get('path')
 
-    data = request.get_json()
-    path = data.get('path')
-    output_path = './upload/'+path
-    os.remove(output_path)
+        output_path = './upload/'+path
 
-    return jsonify({'The {path} file was successfully deleted'}), 200
+        os.remove(output_path)
 
+        return jsonify({'The {path} file was successfully deleted'}), 200
+    except:
+        return jsonify({ 'error': 'Invalid syntax for this request was provided.' }), 400
 
 @app.route('/files/<filename>')
 def send_image(filename):
+
     return send_from_directory('../upload', filename)
 
 
