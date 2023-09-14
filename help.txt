@@ -1,5 +1,8 @@
-criar ambiente virtual
+criar ambiente virtual windows
 python -m venv venv
+
+criar ambiente virtual linux
+python3 -m venv .venv
 
 executar o ambiente windows
 .\venv\Scripts\activate.bat

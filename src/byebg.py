@@ -11,7 +11,7 @@ def image():
     
     try:
 
-        image = request.files['file']
+        """ image = request.files['file']
 
         randomNumber = random.randrange(100,520000)
         print(randomNumber)
@@ -25,6 +25,12 @@ def image():
 
         res = {
             'url': 'http://157.245.48.72:5000/files/'+nameFile
+        }
+
+        return jsonify(res), 200 """
+
+        res = {
+            'url': 'http://157.245.48.72:5000/files/475896.png'
         }
 
         return jsonify(res), 200
