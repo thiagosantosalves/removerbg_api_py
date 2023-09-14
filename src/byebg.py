@@ -21,11 +21,12 @@ def image():
 
         original_img = Image.open(image)
 
-
-        print('imagem')
-        print(original_img)
-
         no_bg_img = remove(original_img)
+
+        print('imagem remover')
+        print(no_bg_img)
+
+
         no_bg_img.save(output_path)
 
         res = {
