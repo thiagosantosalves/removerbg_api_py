@@ -14,10 +14,13 @@ def image():
         image = request.files['file']
 
         randomNumber = random.randrange(100,520000)
-        print(randomNumber)
+       
         nameFile = str(randomNumber)+'.png'
                 
         output_path = './upload/'+nameFile
+
+        print('caminho da imagem')
+        print(output_path)
 
         original_img = Image.open(image)
         no_bg_img = remove(original_img)
