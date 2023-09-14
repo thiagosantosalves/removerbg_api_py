@@ -1,7 +1,7 @@
 import random
 import os
 from rembg import remove
-from PIL import Imagegit 
+from PIL import Image
 from flask import Flask, jsonify, request, send_from_directory
 
 app = Flask(__name__)
@@ -11,7 +11,7 @@ def image():
     
     try:
 
-        """ image = request.files['file']
+        image = request.files['file']
 
         randomNumber = random.randrange(100,520000)
         print(randomNumber)
@@ -27,13 +27,8 @@ def image():
             'url': 'http://157.245.48.72:5000/files/'+nameFile
         }
 
-        return jsonify(res), 200 """
+        return jsonify(res), 200 
 
-        res = {
-            'url': 'http://157.245.48.72:5000/files/475896.png'
-        }
-
-        return jsonify(res), 200
     
     except:
         return jsonify({ 'error': 'Invalid syntax for this request was provided.' }), 400
