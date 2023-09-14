@@ -14,29 +14,17 @@ def image():
         image = request.files['file']
 
         randomNumber = random.randrange(100,520000)
-       
+        print(randomNumber)
         nameFile = str(randomNumber)+'.png'
                 
         output_path = './upload/'+nameFile
 
         original_img = Image.open(image)
-
         no_bg_img = remove(original_img)
-
-        print('imagem remover')
-        print(no_bg_img)
-
-
-        """         no_bg_img.save(output_path) """
-
-        no_bg_img.save('output_image.jpg')
-
-        """ res = {
-            'url': 'http://24.199.99.39:5000/files/'+nameFile
-        } """
+        no_bg_img.save(output_path)
 
         res = {
-            'url': 'http://24.199.99.39:5000/files/teste.png'
+            'url': 'http://24.199.99.39:5000/files/'+nameFile
         }
 
         return jsonify(res), 200 
