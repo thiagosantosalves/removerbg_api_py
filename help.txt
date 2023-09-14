@@ -1,0 +1,16 @@
+criar ambiente virtual
+python -m venv venv
+
+executar o ambiente windows
+.\venv\Scripts\activate.bat
+
+executar o ambiente linux
+. .venv/bin/activate
+
+desativar venv
+deactivate.bat
+
+executar o projeto
+python .\src\byebg.py
+
+pip install -r requirements.txt
