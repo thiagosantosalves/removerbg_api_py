@@ -19,10 +19,12 @@ def image():
                 
         output_path = './upload/'+nameFile
 
-        print('caminho da imagem')
-        print(output_path)
-
         original_img = Image.open(image)
+
+
+        print('imagem')
+        print(original_img)
+
         no_bg_img = remove(original_img)
         no_bg_img.save(output_path)
 
