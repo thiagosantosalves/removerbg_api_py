@@ -1,7 +1,7 @@
 import random
 import os
-""" from rembg import remove
-from PIL import Imagegit  """
+from rembg import remove
+from PIL import Imagegit 
 from flask import Flask, jsonify, request, send_from_directory
 
 app = Flask(__name__)
@@ -38,7 +38,7 @@ def image():
     except:
         return jsonify({ 'error': 'Invalid syntax for this request was provided.' }), 400
 
-""" @app.route('/image_delete', methods=['DELETE'])
+@app.route('/image_delete', methods=['DELETE'])
 def remove_image(): 
     try:
         data = request.get_json()
@@ -56,6 +56,6 @@ def remove_image():
 def send_image(filename):
 
     return send_from_directory('../upload', filename)
- """
+
 
 app.run(port=5000, host='157.245.48.72', debug=True)
