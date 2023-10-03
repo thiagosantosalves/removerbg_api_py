@@ -17,3 +17,5 @@ executar o projeto
 python .\src\byebg.py
 
 pip install -r requirements.txt
+
+pm2 start bot.py --name bot --interpreter python3

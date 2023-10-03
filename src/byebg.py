@@ -3,8 +3,10 @@ import os
 from rembg import remove
 from PIL import Image
 from flask import Flask, jsonify, request, send_from_directory
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/remove', methods=['POST'])
 def image():
@@ -24,7 +26,7 @@ def image():
         no_bg_img.save(output_path)
 
         res = {
-            'url': 'http://24.199.99.39:5000/files/'+nameFile
+            'url': 'http://localhost:5000/files/'+nameFile
         }
 
         return jsonify(res), 200 
@@ -35,17 +37,13 @@ def image():
 
 @app.route('/removefile', methods=['POST'])
 def remove_image(): 
-    try:
+    
         data = request.get_json()
         path = data.get('path')
-
         output_path = './upload/'+path
-
         os.remove(output_path)
 
-        return jsonify({'The {path} file was successfully deleted'}), 200
-    except:
-        return jsonify({ 'error': 'Invalid syntax for this request was provided.' }), 400
+        return jsonify({'The file was successfully deleted'}), 200
 
 @app.route('/files/<filename>')
 def send_image(filename):
@@ -53,4 +51,4 @@ def send_image(filename):
     return send_from_directory('../upload', filename)
 
 
-app.run(port=5000, host='24.199.99.39', debug=True)
+app.run(port=5000, host='localhost', debug=True)
