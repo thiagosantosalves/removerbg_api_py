@@ -26,7 +26,7 @@ def image():
         no_bg_img.save(output_path)
 
         res = {
-            'url': 'http://localhost:5000/files/'+nameFile
+            'url': 'http://24.199.99.39:5000/files/'+nameFile
         }
 
         return jsonify(res), 200 
@@ -51,4 +51,4 @@ def send_image(filename):
     return send_from_directory('../upload', filename)
 
 
-app.run(port=5000, host='localhost', debug=True)
+app.run(port=5000, host='24.199.99.39', debug=True)
